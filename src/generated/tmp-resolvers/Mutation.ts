@@ -8,6 +8,21 @@ export const Mutation: MutationResolvers.Type = {
   createUser: (parent, args, ctx) => {
     throw new Error("Resolver not implemented");
   },
+  createProduct: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
+  createBatch: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
+  createSku: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
+  createLineItem: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
+  createOrder: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
   createDraft: (parent, args, ctx) => {
     throw new Error("Resolver not implemented");
   },

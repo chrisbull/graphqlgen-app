@@ -1,11 +1,18 @@
 type Query {
   feed: [Post!]!
   drafts: [Post!]!
+  orders: [Order!]!
   post(id: ID!): Post
+  order(id: ID!): Order
 }
 
 type Mutation {
-  createUser(name: String = null): User!
+  createUser(name: String!): User!
+  createProduct(code: String!): Product!
+  createBatch(code: String!): Batch!
+  createSku(batchID: ID!, productID: ID!): Sku!
+  createLineItem(skuID: ID!): LineItem!
+  createOrder(lineItemIDs: [ID!]!, userId: ID!): Order!
   createDraft(title: String!, content: String!, authorId: ID!): Post!
   deletePost(id: ID!): Post
   publish(id: ID!): Post
@@ -19,8 +26,37 @@ type Post {
   author: User!
 }
 
+type Product {
+  id: ID!
+  code: String!
+}
+
+type Batch {
+  id: ID!
+  code: String!
+}
+
+type Sku {
+  id: ID!
+  product: Product!
+  batch: Batch
+}
+
+type LineItem {
+  id: ID!
+  sku: Sku!
+}
+
+type Order {
+  id: ID!
+  number: Int!
+  creator: User!
+  lineItems: [LineItem!]!
+}
+
 type User {
   id: ID!
   name: String
   posts: [Post!]!
+  orders: [Order!]!
 }

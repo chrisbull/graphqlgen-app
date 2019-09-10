@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon -x ts-node --no-cache src/index.ts",
+    "start": "ts-node-dev src/index.ts",
     "generate": "graphqlgen"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "graphqlgen": "0.5.1",
     "nodemon": "1.18.9",
     "ts-node": "8.0.2",
+    "ts-node-dev": "^1.0.0-pre.42",
     "typescript": "3.3.3"
   },
   "license": "MIT"

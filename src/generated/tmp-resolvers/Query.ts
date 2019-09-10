@@ -11,7 +11,13 @@ export const Query: QueryResolvers.Type = {
   drafts: (parent, args, ctx) => {
     throw new Error("Resolver not implemented");
   },
+  orders: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
   post: (parent, args, ctx) => {
+    throw new Error("Resolver not implemented");
+  },
+  order: (parent, args, ctx) => {
     throw new Error("Resolver not implemented");
   }
 };

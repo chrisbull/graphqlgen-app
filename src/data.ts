@@ -1,8 +1,8 @@
-import { Data } from './types'
+import { Data, Order, LineItem, Batch, Sku, Product } from './types'
 
 const users = [
-  { id: '1', name: 'Alice', postIDs: ['3', '4'] },
-  { id: '2', name: 'Bob', postIDs: [] },
+  { id: '1', name: 'Alice', postIDs: ['3', '4'], orderIDs: [] },
+  { id: '2', name: 'Bob', postIDs: [], orderIDs: [] },
 ]
 
 const posts = [
@@ -22,9 +22,15 @@ const posts = [
   },
 ]
 
+const orders: Order[] = []
+const lineItems: LineItem[] = []
+const batches: Batch[] = []
+const skus: Sku[] = []
+const products: Product[] = []
+
 let idCount = 4
 function idProvider(): string {
   return `${idCount++}`
 }
 
-export const data: Data = { posts, users, idProvider }
+export const data: Data = { posts, users, orders, lineItems, batches, skus, products, idProvider }
